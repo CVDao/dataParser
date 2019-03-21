@@ -21,14 +21,15 @@ for i in targs:
 #
 targs = glob.glob("*.t")
 
-tempDict = {}
 tArray = np.loadtxt(targs[0], dtype = float)
-for i in tArray:
-    tempDict[i[0]] = [i[1]]
+tArray = tArray.tolist()
 
 for i in range(1, len(targs)):
-    tArray = np.loadtxt(targs[i], dtype = float)
-    for i in tArray:
-        tempDict[i[0]].append(i[1])
-
-print(tempDict)
+    t2Array = np.loadtxt(targs[i], dtype = float).tolist()
+    for i in range(len(t2Array)):
+        tArray[i].append(t2Array[i][1])
+a = ["Wave Length"]
+for i in range(len(tArray[0])-1):
+    a.append(i)
+tArray = [a] + tArray
+print(tArray)
