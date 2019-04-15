@@ -18,9 +18,19 @@ for i in targs:                     #for every file
 
     temp = i[0: len(i)-3] + "t"     #The output file removes .txt and appends .t 
     f = open(temp, "w")             #the temp files are the original file, minus the metadata
-    for line in lines:
-        if not ">>>>>" in line:
-            f.write(line)
+
+    start = 0
+    for line in range(len(lines)):
+        if ">>>>>" in lines[line]:
+            start = line + 1
+            break
+
+    for line in (range(start, len(lines))):
+        if ">>>>>" in lines[line]:
+            break
+
+        f.write(lines[line])
+
     f.close()
 #
 targs = glob.glob("*.t") # look over all the temp files made
