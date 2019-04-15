@@ -1,7 +1,6 @@
 #find all .txt/word doc files in folder
 import os, glob
 import numpy as np
-import pandas as pd
 import xlsxwriter as xwriter
 
 
