@@ -19,6 +19,8 @@ Place spectrometer output files you need consolidated into the folder.
 
 Open terminal and navigate to this folder. Use the command "./processor.py" to run.
 
+**Output file will be overwritten with the new consolidated data.**
+
 # Updating:
 
 Navigate to the folder in terminal. Use the command "git pull". 
